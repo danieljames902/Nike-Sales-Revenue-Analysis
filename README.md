@@ -41,4 +41,4 @@ This project predicts Nike's US sales revenue using a Tuned Random Forest model 
 
 ## Links
 - [Portfolio](https://danieljames902.github.io)
-- [Interactive Notebook (Colab)](https://colab.research.google.com/drive/your-link)
+- [Interactive Notebook (Colab)](https://colab.research.google.com/drive/17RjXd7y8NdwgicNYqUvyoF3b1o3eIUwI?usp=sharing)
