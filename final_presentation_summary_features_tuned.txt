@@ -1,0 +1,43 @@
+Nike US Sales Revenue Analysis: Presentation Summary (Tuned Random Forest Model with Additional Features)
+==================================================
+
+Objective:
+- Identify key factors influencing Sales Revenue using Random Forest regression.
+
+Dataset Overview:
+- Source: Nike_US_Sales.xlsx
+- Features: Units Sold, Operating Profit, Retailer ID, Quarter, Sales Method, Product Category (subcategories: Running, Basketball, Lifestyle, Soccer, Training, Other), Sales_Method_Product_Category interaction, Region (Midwest, Northeast, Southeast, West)
+- Target: Sales Revenue (derived as Operating Profit / Operating Margin)
+
+Key Findings:
+- Units Sold and Operating Profit are the strongest predictors of Sales Revenue (highest feature importance).
+- Retailer ID, Quarter, Sales Method, and Product Category contribute to predictions.
+- Sales Method: Online sales have higher typical revenue, suggesting a focus on e-commerce strategies.
+- Product Category: Basketball and Lifestyle shoes may drive higher revenue (check feature importance).
+- Interaction term (Sales_Method_Product_Category): Captures combined effects (e.g., Online Basketball sales).
+- Region: West (Retailer ID_1128299) and Northeast (Retailer ID_1185732) may have higher sales; Southeast (Retailer ID_1197831) underperforms.
+- Seasonal trends: Retailer ID_1189833 (Midwest) peaks in Q2 but drops in Q4; Retailer ID_1197831 (Southeast) underperforms across quarters.
+- Outliers capped at 99th percentile, reducing their impact on predictions.
+
+Model Performance (Tuned Random Forest):
+- Testing R-squared: 0.9840
+- Testing RMSE: 18000.59
+- Testing MAE: 7806.61
+- Cross-Validation R-squared Mean: 0.9755, Std: 0.0030
+- Comparison to Huber Regression (Improved Model):
+- Huber R-squared: 0.9206, RMSE: 21,808.14, MAE: 8,625.77, Cross-Validation Std: 0.9628
+
+Recommendations:
+- Focus on increasing Units Sold to boost Sales Revenue.
+- Leverage seasonal trends: Target Q4 and Q3 for marketing campaigns; support Retailer ID_1189833 (Midwest) in Q4 to address its sales drop.
+- Investigate Retailer ID_1197831’s underperformance in Southeast: Check sales method, product category mix, and regional factors.
+- Monitor Retailer ID_1128299 (West) for consistent performance as a benchmark.
+- Optimize sales channels: Boost Online sales to capitalize on higher revenue potential.
+- Tailor strategies by Product Category: Promote high-revenue categories like Basketball shoes.
+- Regional Strategy: Focus on high-performing regions like West and Northeast; support Southeast to improve sales.
+- Use Sales_Method_Product_Category insights for targeted campaigns (e.g., Online Basketball shoe promotions in West).
+
+Limitations:
+- Dataset contains only footwear; broader product types (e.g., apparel) could enhance Product Category insights.
+- Region inferred from Retailer ID; actual geographic data could improve accuracy.
+- Cross-validation variability (check Std) may indicate remaining data heterogeneity.
